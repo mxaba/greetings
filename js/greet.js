@@ -1,7 +1,7 @@
 var greetButton = document.querySelector('.greetButton')
 var greetText = document.querySelector('.greetText')
 var greetTextArea = document.querySelector('.greetTextArea')
-var count = document.querySelector('.count')
+var count = document.querySelector('.cont')
 var greet = greetLanguageRadio()
 var greetedNames = []
 
