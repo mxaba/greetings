@@ -2,6 +2,7 @@ var greetButton = document.querySelector('.greetButton')
 var greetText = document.querySelector('.greetText')
 var greetTextArea = document.querySelector('.greetTextArea')
 var count = document.querySelector('.cont')
+var clearButton = document.querySelector('.clearButton')
 var greet = greetLanguageRadio()
 var greetedNames = []
 
@@ -34,4 +35,8 @@ greetButton.addEventListener('click', function(){
         console.log(greetedNames.length)
         namePerson = ''
     }
+})
+
+clearButton.addEventListener('click', function(){
+    location.reload()
 })
