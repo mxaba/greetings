@@ -16,8 +16,8 @@ function greetLanguageRadio() {
         person = per
     }
 
-    function listPerson(name1) {
-        ListOfNames = name1
+    function listPerson(name) {
+        ListOfNames = name
         if (!ListOfNames.includes(person)){
             ListOfNames.push(person)
             return ListOfNames

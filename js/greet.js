@@ -1,13 +1,19 @@
 var greetButton = document.querySelector('.greetButton')
 var greetText = document.querySelector('.greetText')
 var greetTextArea = document.querySelector('.greetTextArea')
-var count = document.querySelector('.cont')
+var count = document.querySelector('.numberCounter')
 var clearButton = document.querySelector('.clearButton')
 var greet = greetLanguageRadio()
 var greetedNames = []
 
+// greetedNames = localStorage.getItem('names')
+if (typeof localStorage['Names'] !== 'undefined') {
+    greetedNames = localStorage.getItem('Names')
+}
+
 greetText.innerHTML = greet.greetPerson()
 count.innerHTML = greetedNames.length
+
 
 greetButton.addEventListener('click', function(){
     var checkedlanguageElem = document.querySelector("input[name='languageRadio']:checked")
@@ -29,14 +35,25 @@ greetButton.addEventListener('click', function(){
         greet.setGreet(checkedlanguage, namePerson)
         greetedNames = greet.listPerson(greetedNames)
 
+        // var gNames = JSON.stringify(greetedNames)
+
+        localStorage.setItem('Names', greetedNames )
+
         greetText.innerHTML = greet.greetPerson()
         count.innerHTML = greetedNames.length
 
-        console.log(greetedNames.length)
         namePerson = ''
     }
+    else {
+        greet.setGreet(checkedlanguage, namePerson)
+        greetText.innerHTML = greet.greetPerson()
+    }
+
+    console.log(greetedNames)
+    
 })
 
 clearButton.addEventListener('click', function(){
+    localStorage.clear()
     location.reload()
 })
