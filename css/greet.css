@@ -1,0 +1,67 @@
+
+* {
+    font-family: comic  , "Helvetica Neue", Helvetica, sans-serif;
+    margin-bottom: 5%;
+
+   
+}
+
+body {
+    background-color: rgba(83, 75, 75, 0.25);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: 10%;
+    
+}
+
+.body_center {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    
+
+}
+
+.numberCounter {
+    font-size: 23px;
+}
+
+.greetTextArea {
+    background-color: rgb(170, 184, 196);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.container1 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+
+@media only screen and (max-width: 200px) {  /* 720px */ 
+    .container {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+    
+    .container1 {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+
+    .numberCounter {
+        font-size: 18px;
+    }
+
+    .greetTextArea {
+        width: 50%;
+    }
+
+
+
+}
