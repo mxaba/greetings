@@ -10,6 +10,9 @@ if (typeof localStorage['NamesStored'] !== 'undefined'){
 
 function listNames(){
    console.log(nameList1)
+
+   const keys = Object.keys(nameList1)
+   listName.innerHTML = JSON.stringify(keys)
 }
 
 listNameB.addEventListener('click', listNames)
