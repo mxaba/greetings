@@ -5,6 +5,14 @@ function greetLanguageRadio() {
     var nameList = {}
     var greetingsCounter = 0
 
+    if (localStorage['numberNames']) {
+        greetingsCounter = Number(localStorage['numberNames'])
+    } 
+    
+    if (typeof localStorage['NamesStored'] !== 'undefined'){
+        nameList = JSON.parse(localStorage.getItem('NamesStored'))
+    }
+
     function langRun(la, per) {
         if (la == 'spanish'){
             languMessage = 'Hola, '
@@ -52,26 +60,15 @@ function greetLanguageRadio() {
         return greetingsCounter
     }
 
-    function clearNumb() {
-        greetingsCounter = 0
-        return greetingsCounter
-    }
-
     function getNameList() {
         return nameList
     }
 
     function reset() {
         localStorage.clear()
-        location.reload()
     }
-     function clear() {
-         localStorage.clear()
-     }
 
     return {
-        clear: clear,
-        clearNumb: clearNumb,
         reset: reset,
         langRun : langRun,
         checkErrors : checkErrors,

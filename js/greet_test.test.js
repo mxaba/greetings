@@ -1,35 +1,34 @@
 describe('Greet Exercise Function', function(){
+    localStorage.clear()
     describe('Testing the names in different languages', function(){
+        var gLang = greetLanguageRadio()
         it('Should return the name greated in Spanish', function(){
-            var gLang = greetLanguageRadio()
+            
             gLang.langRun('spanish', 'Mcebo')
             gLang.nameLists('Mcebo')
 
             assert.equal('Hola, Mcebo', gLang.nameLists('Mcebo'))
         })
         it('Should return the name greated in isiZulu', function(){
-            var gLang = greetLanguageRadio()
             gLang.langRun('isiZulu', 'Mcebo')
             gLang.nameLists('Mcebo')
 
             assert.equal('Sawubona, Mcebo', gLang.nameLists('Mcebo'))
         })
         it('Should return the name greated in English', function(){
-            var gLang = greetLanguageRadio()
             gLang.langRun('english', 'Mcebo')
             gLang.nameLists('Mcebo')
 
             assert.equal('Hello, Mcebo', gLang.nameLists('Mcebo'))
         })
         it('Should return 1 for the counter since one name was greated', function(){
-            var gLang = greetLanguageRadio()
             assert.equal(1, gLang.getCounter())
         })
     })
     describe('Checking errors', function(){
         var gLang = greetLanguageRadio()
         it('Should return "Please pass a string/Name of a person" if left empty', function(){
-          gLang.clear()
+          gLang.reset()
           gLang.checkErrors()
           assert.equal('Please pass a string/Name of a person', gLang.checkErrors() )
         })
@@ -37,9 +36,9 @@ describe('Greet Exercise Function', function(){
 
     describe('Returning all the names', function(){
         var gLang = greetLanguageRadio()
-        gLang.clear()   
+        gLang.reset()   
         it('Should return Should be able to add and greet the last person', function(){
-
+            gLang.reset()  
             gLang.langRun('isizulu', 'Mcebo')
             gLang.nameLists('Mcebo')
             gLang.langRun('english', 'Samuel')
