@@ -6,8 +6,15 @@ var clearButton = document.querySelector('.clearButton')
 var errors = document.querySelector('.errors')
 var greetLang = greetLanguageRadio()
 
-count.innerHTML = greetLang.getCounter()
+if (localStorage['numberNames']) {
+    greetLang.getCounter() = Number(localStorage['numberNames'])
+} 
 
+if (typeof localStorage['NamesStored'] !== 'undefined'){
+    greetLang.getNameList() = JSON.parse(localStorage.getItem('NamesStored'))
+}
+
+count.innerHTML = greetLang.getCounter()
 
 greetButton.addEventListener('click', function(){
     var checkedlanguageElem = document.querySelector("input[name='languageRadio']:checked")

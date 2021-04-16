@@ -5,15 +5,6 @@ function greetLanguageRadio() {
     var nameList = {}
     var greetingsCounter = 0
 
-    
-    if (localStorage['numberNames']) {
-        greetingsCounter = Number(localStorage['numberNames'])
-    } 
-    
-    if (typeof localStorage['NamesStored'] !== 'undefined'){
-        nameList = JSON.parse(localStorage.getItem('NamesStored'))
-    }
-
     function langRun(la, per) {
         if (la == 'spanish'){
             languMessage = 'Hola, '
