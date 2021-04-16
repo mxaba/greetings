@@ -1,11 +1,9 @@
-
-var nameList = {}
-var greetingsCounter = 0
-
 function greetLanguageRadio() {
 
     var languMessage = ''
     var person = ''
+    var nameList = {}
+    var greetingsCounter = 0
 
     
     if (localStorage['numberNames']) {
@@ -31,7 +29,7 @@ function greetLanguageRadio() {
     function checkErrors() {
         if (person == ''){
             return 'Please pass a string/Name of a person'
-        } else if (languMessage == '' || languMessage == undefined){
+        } if (languMessage == '' || languMessage == undefined){
             return 'Check one of the languages using the Radio'
         }
     }
@@ -63,6 +61,11 @@ function greetLanguageRadio() {
         return greetingsCounter
     }
 
+    function clearNumb() {
+        greetingsCounter = 0
+        return greetingsCounter
+    }
+
     function getNameList() {
         return nameList
     }
@@ -71,9 +74,13 @@ function greetLanguageRadio() {
         localStorage.clear()
         location.reload()
     }
-
+     function clear() {
+         localStorage.clear()
+     }
 
     return {
+        clear: clear,
+        clearNumb: clearNumb,
         reset: reset,
         langRun : langRun,
         checkErrors : checkErrors,

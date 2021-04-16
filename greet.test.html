@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
+    <title>Test Drive Development | Greet</title>
+</head>
+<body>
+    <a href="./">Go Back and Great More</a>
+    <div id="mocha"></div>
+
+    <script src="https://unpkg.com/chai/chai.js"></script>
+    <script src="https://unpkg.com/mocha/mocha.js"></script>
+
+    <script class="mocha-init">
+      mocha.setup('bdd');
+      mocha.checkLeaks();
+      assert = chai.assert;
+    </script>
+    
+    <script src="./js/greet-logic.js" charset="utf-8"></script>
+    <script src="./js/greet_test.test.js" charset="utf-8"></script>
+    
+    <script class="mocha-exec">
+       mocha.run();
+   </script>
+</body>
+</html>
