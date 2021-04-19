@@ -27,7 +27,7 @@ function greetLanguageRadio() {
 
     function checkErrors() {
         if (person == ''){
-            return 'cc'
+            return 'Please pass a name'
         } if (languMessage == '' || languMessage == undefined){
             return 'Check one of the languages using the Radio'
         }

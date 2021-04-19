@@ -27,10 +27,10 @@ describe('Greet Exercise Function', function(){
     })
     describe('Checking errors', function(){
         var gLang = greetLanguageRadio()
-        it('Should return "Please pass a string/Name of a person" if left empty', function(){
+        it('Should return "Please pass a name" if left empty', function(){
           gLang.reset()
           gLang.checkErrors()
-          assert.equal('Please pass a string/Name of a person', gLang.checkErrors() )
+          assert.equal('Please pass a name', gLang.checkErrors() )
         })
     })
 
