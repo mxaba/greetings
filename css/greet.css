@@ -18,6 +18,15 @@ h1 {
     font-weight: bolder;
 }
 
+.errorMes {
+    font-size: large;
+    color: red;
+}
+
+.err {
+    margin-bottom: 0;
+}
+
 .la {
     font-size: 16px;
     font-weight: bold;
@@ -52,7 +61,7 @@ h1 {
 }
 
 
-@media only screen and (max-width: 200px) {  /* 720px */ 
+@media only screen and (max-width: 280px) {  /* 720px */ 
     *{
          padding-left: 2%;
     }
