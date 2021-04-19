@@ -27,21 +27,23 @@ greetButton.addEventListener('click', function(){
     } 
     setTimeout(function(){
         errorMes.innerHTML = ""
-        greetText.innerHTML = ''
         }, 2099)
 
-
-    if (checkedlanguageElem && /[a-zA-z]$/.test(namePerson) && List[namePerson] === undefined){
         var checkedlanguage = checkedlanguageElem.value
         var namePerson1 = greetLang.capFirstLetter(namePerson)
+    if (checkedlanguageElem && /[a-zA-z]$/.test(namePerson) && List[namePerson] === undefined){
 
         greetLang.langRun(checkedlanguage, namePerson1)
         List = greetLang.nameLists(List)
         localStorage.setItem('NamesStored', JSON.stringify(List))
         greetText.innerHTML = greetLang.greetPerson()
         count.innerHTML = Object.keys(List).length
+    } else {
+        greetText.innerHTML = checkedlanguage +  ', ' + namePerson1
     }
-    greetText.innerHTML = greetLang.greetPerson()
+    setTimeout(function(){
+        greetText.innerHTML = ""
+        }, 8000)
     greetTextArea.value = ""
     console.log(List)
     console.log(Object.keys(List).length)
