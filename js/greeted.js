@@ -12,7 +12,7 @@ function listNames(){
    console.log(nameList1)
 
    const keys = Object.keys(nameList1)
-   listName.innerHTML = JSON.stringify(keys)
+   listName.innerHTML = JSON.stringify(nameList1)
 }
 
 listNameB.addEventListener('click', listNames)

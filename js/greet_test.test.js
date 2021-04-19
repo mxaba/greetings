@@ -53,7 +53,7 @@ describe('Greet Exercise Function', function(){
             assert.equal(3, gLang.getCounter())
         })
         it ('Should be able to return all the names on the list', function(){
-            assert.deepEqual({ Mcebo: 1, Samuel: 1, Magagula: 1 }, gLang.getNameList())
+            assert.deepEqual({ Mcebo: 1, Samuel: 1, Magagula: 2 }, gLang.getNameList())
             gLang.reset() 
         })
         

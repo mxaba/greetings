@@ -1,3 +1,4 @@
+
 function greetLanguageRadio() {
 
     var languMessage = ''
@@ -47,6 +48,8 @@ function greetLanguageRadio() {
                 localStorage.setItem('numberNames', greetingsCounter)  
                 nameList[name] = 1
                 localStorage.setItem('NamesStored', JSON.stringify(nameList))  
+            } else {
+                nameList[name] += 1
             }
             return comb
         } else {
