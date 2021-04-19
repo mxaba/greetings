@@ -21,7 +21,7 @@ greetButton.addEventListener('click', function(){
         count.innerHTML = greetLang.getCounter()
     } else {
         alert('Language not Checked')
-        greetText.innerHTML = 'Plase Select the Language'
+        greetText.innerHTML = 'Plase Select a Language'
     }
     greetTextArea.value = ""
     console.log(greetLang.getNameList())

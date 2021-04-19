@@ -27,7 +27,7 @@ function greetLanguageRadio() {
 
     function checkErrors() {
         if (person == ''){
-            return 'Please pass a string/Name of a person'
+            return 'cc'
         } if (languMessage == '' || languMessage == undefined){
             return 'Check one of the languages using the Radio'
         }
@@ -41,7 +41,7 @@ function greetLanguageRadio() {
     //Adding to the object
     function nameLists(name) {
         var comb = languMessage + person
-        if (name != ''){
+        if (name != '' && /[a-zA-z]$/.test(person)){
             if (nameList[name] === undefined){
                 greetingsCounter++
                 localStorage.setItem('numberNames', greetingsCounter)  
@@ -50,8 +50,8 @@ function greetLanguageRadio() {
             }
             return comb
         } else {
-            alert('Please Pass a String')
-            return "You can't leave it empty!"
+            alert('Please Pass a Name')
+            return "Please pass a name"
         }
         
     }
