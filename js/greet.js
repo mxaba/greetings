@@ -48,6 +48,6 @@ greetButton.addEventListener('click', function(){
 })
 
 clearButton.addEventListener('click', function(){
-    greetLang.reset()
+    localStorage.clear()
     location.reload()
 })

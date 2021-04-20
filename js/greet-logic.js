@@ -62,14 +62,9 @@ function greetLanguageRadio() {
         }
     }
 
-    function reset() {
-        localStorage.clear()
-    }
-
     return {
         getNAmeOnList: getNAmeOnList,
         greetPerson: greetPerson,
-        reset: reset,
         langRun : langRun,
         checkErrors : checkErrors,
         nameLists : nameLists,
