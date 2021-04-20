@@ -37,10 +37,11 @@ function greetLanguageRadio() {
         if (nameList[person] === undefined){
             greetingsCounter++ 
             nameList[person] = 1
+            return nameList
         } else {
             nameList[person] += 1
+            return nameList
         }
-        return nameList
     }
 
     function greetPerson(){

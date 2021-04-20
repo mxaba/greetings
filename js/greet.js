@@ -16,7 +16,7 @@ count.innerHTML = Object.keys(List).length
 
 greetButton.addEventListener('click', function(){
     var checkedlanguageElem = document.querySelector("input[name='languageRadio']:checked")
-    var namePerson = greetTextArea.value.trim()
+    var namePerson = greetTextArea.value
 
     if (!checkedlanguageElem && namePerson ==""){
         errorMes.innerHTML = "Please enter a name and Select a language!"
@@ -31,15 +31,13 @@ greetButton.addEventListener('click', function(){
 
         var checkedlanguage = checkedlanguageElem.value
         var namePerson1 = greetLang.capFirstLetter(namePerson)
-    if (checkedlanguageElem && /[a-zA-z]$/.test(namePerson) && List[namePerson] === undefined){
+    if (checkedlanguageElem && /[a-zA-z]$/.test(namePerson)){
 
         greetLang.langRun(checkedlanguage, namePerson1)
         List = greetLang.nameLists(List)
         localStorage.setItem('NamesStored', JSON.stringify(List))
         greetText.innerHTML = greetLang.greetPerson()
         count.innerHTML = Object.keys(List).length
-    } else {
-        greetText.innerHTML = checkedlanguage +  ', ' + namePerson1
     }
     setTimeout(function(){
         greetText.innerHTML = ""
